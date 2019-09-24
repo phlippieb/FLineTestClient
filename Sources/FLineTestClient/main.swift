@@ -10,15 +10,21 @@ let debug = true
 
 class Main {
      public func getOptionsMessage(for state: FLineCore.FirelineState) -> String {
-        return "Enter q to quit."
+        return ""
+        + "Enter p to play.\n"
+        + "Enter q to quit."
     }
 
     func getAction(for input: String) -> Action? {
         if input == "q" {
             return MainMenuAction.quit
-        }
 
-        return nil
+        } else if input == "p" {
+            return MainMenuAction.play
+
+        } else {
+            return nil
+        }
     }
 }
 
