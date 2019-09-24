@@ -32,11 +32,15 @@ while !didQuit {
 
     print(main.getOptionsMessage(for: state))
     
-    print(">_ ", terminator: "")
+    print(ANSIColors.red + ">_ ", terminator: "")
+    print(ANSIColors.yellow + "", terminator: "")
+
     guard let input = readLine() else {
+        print(ANSIColors.none + "", terminator: "")
         print("Something went wrong.")
         break
     }
+    print(ANSIColors.none + "", terminator: "")
 
     if let action = main.getAction(for: input) {
         if debug {
